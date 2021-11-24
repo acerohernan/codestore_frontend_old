@@ -113,18 +113,24 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .socialLink{
     display: flex;
     justify-content: center;
-    border: 1px solid red;
-    color: black;
 }
 
 .socialIcon {
     width: 30px;
     height: 30px;
+    color: #b1b1b1;
+}
+
+.socialIcon:hover{
+    color: black;
+    transition: 0.5s all ease;
 }
 
 @media only screen and (min-width: 1024px){

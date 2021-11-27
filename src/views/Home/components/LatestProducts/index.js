@@ -10,7 +10,7 @@ function LatestProducts() {
       <h3 className={latest.title}>
         Limited reservations on upcoming products and restocks
       </h3>
-      <LinkStyled to="/">See more products</LinkStyled>
+      <LinkStyled to="/" text="See more products" />
       <div className={latest.cards}>
         <div className={latest.card}>
           <img src="" alt="latest card" />

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 import link from "./link.module.css";
 
-function LinkStyled({ child, to }) {
+function LinkStyled({ text, to }) {
   return (
     <Link className={link.container} to={to}>
-      {child}
+      <span>{text}</span>
       <Arrow className={link.icon} />
     </Link>
   );

@@ -7,12 +7,9 @@ function Hero() {
     <div className={hero.container}>
       <div className={hero.image}></div>
       <div className={hero.textContainer}>
-        <h1 className={hero.title}>Our big sale.</h1>
-        <span className={hero.subtitle}>
-          Early Black Friday has arrived. Get up to 50% off our entire
-          colecction
-        </span>
-        <button className={hero.button}>See the deals.</button>
+        <h1 className={hero.title}>The care you´ve always needed</h1>
+        <span className={hero.subtitle}>A RANGE OF PRODUCTS FOR YOU</span>
+        <button className={hero.button}>Shop now</button>
       </div>
     </div>
   );

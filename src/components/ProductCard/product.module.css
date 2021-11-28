@@ -1,0 +1,26 @@
+.container{
+    text-align: start;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid black;
+}
+
+.image{
+ width: 100%;
+}
+
+.title{
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.text{
+    font-size: 0.8rem;
+    color: gray;
+    margin: 10px 0;
+}
+
+.price{
+   font-weight: bold; 
+}

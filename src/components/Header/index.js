@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./header.module.css";
+import header from "./header.module.css";
 
 import { Link } from "react-router-dom";
 
@@ -10,25 +10,28 @@ import logo from "../../assets/logo.png";
 
 function Header() {
   return (
-    <div className={styles.container}>
-      <MenuIcon className={styles.menu} />
-      <img src={logo} alt="logo" className={styles.image} />
-      <div className={styles.linksContainer}>
-        <Link to="/" className={styles.link}>
-          SHOP
-        </Link>
-        <Link to="/about" className={styles.link}>
-          ABOUT
-        </Link>
-        <Link to="/" className={styles.link}>
-          CONTACT
-        </Link>
+    <>
+      <div className={header.container}>
+        <MenuIcon className={header.menu} />
+        <img src={logo} alt="logo" className={header.image} />
+        <div className={header.linksContainer}>
+          <Link to="/" className={header.link}>
+            SHOP
+          </Link>
+          <Link to="/about" className={header.link}>
+            ABOUT
+          </Link>
+          <Link to="/collections" className={header.link}>
+            CONTACT
+          </Link>
+        </div>
+        <div className={header.cartContainer}>
+          <span className={header.currency}>USD</span>
+          <BagIcon className={header.bag} />
+        </div>
       </div>
-      <div className={styles.cartContainer}>
-        <span className={styles.currency}>USD</span>
-        <BagIcon className={styles.bag} />
-      </div>
-    </div>
+      <div className={header.shadow}></div>
+    </>
   );
 }
 

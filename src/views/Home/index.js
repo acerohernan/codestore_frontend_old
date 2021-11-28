@@ -4,8 +4,6 @@ import Hero from "./components/Hero";
 import Banner from "./components/Banner";
 import Categories from "./components/Categories";
 import LatestProducts from "./components/LatestProducts";
-import Explore from "./components/Explore";
-import Follow from "./components/Follow";
 
 import home from "./home.module.css";
 
@@ -16,8 +14,6 @@ function Home() {
       <Banner />
       <Categories />
       <LatestProducts />
-      <Explore />
-      <Follow />
     </div>
   );
 }

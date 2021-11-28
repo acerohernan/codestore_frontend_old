@@ -9,6 +9,7 @@
     color: black;
     position: fixed;
     background-color: white;
+    border-bottom: 1px solid black;
 }
 
 /* .container:hover{

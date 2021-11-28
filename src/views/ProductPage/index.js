@@ -1,0 +1,66 @@
+import React from "react";
+
+import Details from "./components/Details";
+import ExtraInfo from "./components/ExtraInfo";
+import Reviews from "./components/Reviews";
+import LatestProducst from "../Home/components/LatestProducts";
+
+import product from "./product.module.css";
+import image from "../../assets/latest.jpg";
+
+function ProductPage() {
+  return (
+    <div className={product.container}>
+      <div className={product.main}>
+        <div className={product.imageContainer}>
+          <img src={image} alt="product-img" className={product.image} />
+          <img src={image} alt="product-img" className={product.image} />
+          <img src={image} alt="product-img" className={product.image} />
+        </div>
+        <div>
+          <Details />
+          <ExtraInfo
+            title="Shipping and returns"
+            text="Arrives in 5 to 7 days, retuns accepted within 30 days. For more
+        information, click here."
+          />
+          <ExtraInfo
+            title="Shipping"
+            text="Slightly textured fabric with tonal geometric design and a bit of shine"
+          />
+        </div>
+      </div>
+      <Reviews
+        reviews={[
+          {
+            stars: "5/5",
+            title: "Perfect",
+            text: "Great fit and feel. They elevate lounging to the next level!",
+            name: "Heidi C. | December, 2019",
+          },
+          {
+            stars: "3.5/5",
+            title: "So comfortable!",
+            text: "I sized up just in case and kind of wished I hadn’t. Very comfortable and I live in them exclusively during the weekend.",
+            name: "Heidi C. | December, 2019",
+          },
+          {
+            stars: "4/5",
+            title: "Comfy but thin",
+            text: "Comfortable but kinda thin for a pant. I typically wear a 32/33 pant and had to size up to XL for these to not fit like a legging. Have been wearing pretty solid for a month of so and there's some pilling, but not a lot. Good price for OK product.",
+            name: "Heidi C. | December, 2019",
+          },
+          {
+            stars: "3.5/5",
+            title: "So comfortable!",
+            text: "I sized up just in case and kind of wished I hadn’t. Very comfortable and I live in them exclusively during the weekend.",
+            name: "Heidi C. | December, 2019",
+          },
+        ]}
+      />
+      <LatestProducst />
+    </div>
+  );
+}
+
+export default ProductPage;

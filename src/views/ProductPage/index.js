@@ -17,7 +17,7 @@ function ProductPage() {
           <img src={image} alt="product-img" className={product.image} />
           <img src={image} alt="product-img" className={product.image} />
         </div>
-        <div>
+        <div className={product.sideBar}>
           <Details />
           <ExtraInfo
             title="Shipping and returns"

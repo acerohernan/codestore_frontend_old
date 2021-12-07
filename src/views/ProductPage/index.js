@@ -14,8 +14,10 @@ function ProductPage() {
       <div className={product.main}>
         <div className={product.imageContainer}>
           <img src={image} alt="product-img" className={product.image} />
-          <img src={image} alt="product-img" className={product.image} />
-          <img src={image} alt="product-img" className={product.image} />
+          <div className={product.secondaryImgs}>
+            <img src={image} alt="secondary" />
+            <img src={image} alt="secondary" />
+          </div>
         </div>
         <div className={product.sideBar}>
           <Details />

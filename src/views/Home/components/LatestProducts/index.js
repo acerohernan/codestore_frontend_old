@@ -3,7 +3,8 @@ import React from "react";
 import LinkStyled from "../../../../components/LinkStyled";
 
 import latest from "./latest.module.css";
-import image from "../../../../assets/latest.jpg";
+
+import ProductCard from "../../../../components/ProductCard";
 
 function LatestProducts() {
   return (
@@ -15,16 +16,7 @@ function LatestProducts() {
       <LinkStyled to="/" text="See more products" />
       <div className={latest.cards}>
         {[1, 2, 3, 4].map((el, index) => (
-          <div className={latest.card} key={index}>
-            <img src={image} alt="latest card" className={latest.cardImage} />
-            <span className={latest.cardTitle}>Complexion Cream</span>
-            <p className={latest.cardText}>
-              Anti-aging complexion cream for medium to dry skin. Nourish your
-              face with a natural vitamin burst for that perfectly balanced
-              glow.
-            </p>
-            <span className={latest.cardPrice}>$32.00</span>
-          </div>
+          <ProductCard key={index} />
         ))}
       </div>
     </div>

@@ -31,42 +31,9 @@
     margin: 40px auto;
 }
 
-.card{
-    text-align: start;
-    padding: 15px 0;
-    border-bottom: 1px solid black;
-}
-
-.cardImage{
-    width: 100%;
-}
-
-.cardTitle{
-    font-weight: bold;
-    margin-top: 10px;
-    display: inline-block;
-}
-
-.cardText{
-    font-size: 0.8rem;
-    color: gray;
-    margin: 10px 0;
-}
-
-.cardPrice{
-    font-weight: bold;
-}
-
 @media only screen and (min-width: 1024px){
     .cards{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-
-    .title{
-        font-size: 2rem;
-        max-width: 800px;
-        margin: 0 auto 20px; 
-    }
-
 }

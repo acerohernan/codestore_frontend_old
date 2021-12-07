@@ -3,7 +3,10 @@ import React from "react";
 import categories from "./categories.module.css";
 
 import imageSmall from "../../../../assets/categories.jpeg";
-import imageBig from "../../../../assets/categories1.jpeg";
+import imageBig from "../../../../assets/categories1.png";
+
+import imageBig2 from "../../../../assets/categories2.png";
+import imageBig3 from "../../../../assets/categories3.jpg";
 
 function Categories() {
   return (
@@ -14,40 +17,40 @@ function Categories() {
           <img
             alt="categories"
             className={categories.imageSmall}
-            src={imageSmall}
+            src={imageBig}
           />
           <img
             alt="categories"
             className={categories.imageBig}
             src={imageBig}
           />
-          <h4 className={categories.itemTitle}>Facial Products</h4>
+          <h4 className={categories.itemTitle}>Hoddies</h4>
         </div>
         <div className={categories.item}>
           <img
             alt="categories"
             className={categories.imageSmall}
-            src={imageSmall}
+            src={imageBig2}
           />
           <img
             alt="categories"
             className={categories.imageBig}
-            src={imageBig}
+            src={imageBig2}
           />
-          <h4 className={categories.itemTitle}>Hair Products</h4>
+          <h4 className={categories.itemTitle}>T shirts</h4>
         </div>
         <div className={categories.item}>
           <img
             alt="categories"
             className={categories.imageSmall}
-            src={imageSmall}
+            src={imageBig3}
           />
           <img
             alt="categories"
             className={categories.imageBig}
-            src={imageBig}
+            src={imageBig3}
           />
-          <h4 className={categories.itemTitle}>Body Products</h4>
+          <h4 className={categories.itemTitle}>Mugs</h4>
         </div>
       </div>
     </div>

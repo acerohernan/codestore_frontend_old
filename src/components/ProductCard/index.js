@@ -1,12 +1,14 @@
 import React from "react";
 
 import product from "./product.module.css";
-import image from "../../assets/latest.jpg";
+
+const link =
+  "https://ih1.redbubble.net/image.334302654.3818/ssrco,slim_fit_t_shirt,mens,101010:01c5ca27c6,front,square_product,600x600.u7.jpg";
 
 function ProductCard() {
   return (
     <div className={product.container}>
-      <img src={image} alt="product card" className={product.image} />
+      <img src={link} alt="product card" className={product.image} />
       <span className={product.title}>Complexion Cream</span>
       <p className={product.text}>
         Anti-aging complexion cream for medium to dry skin. Nourish your face

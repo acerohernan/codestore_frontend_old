@@ -23,7 +23,7 @@ function ProductPage() {
         </div>
         <div className={product.sideBar}>
           <Details />
-          <ExtraInfo
+          {/* <ExtraInfo
             title="Shipping and returns"
             text="Arrives in 5 to 7 days, retuns accepted within 30 days. For more
         information, click here."
@@ -31,7 +31,7 @@ function ProductPage() {
           <ExtraInfo
             title="Shipping"
             text="Slightly textured fabric with tonal geometric design and a bit of shine"
-          />
+          /> */}
         </div>
       </div>
       <Reviews

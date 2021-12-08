@@ -4,6 +4,7 @@
     box-sizing: border-box;
     max-width: 1200px;
     margin: 0 auto;
+    
 }
 
 .main{
@@ -43,6 +44,8 @@
         display: grid;
         grid-template-columns: 1fr 400px;
         gap: 20px;
+        align-items: center;
+        padding: 60px 0;
     }
 
     .imageContainer{

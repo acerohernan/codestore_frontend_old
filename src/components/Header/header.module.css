@@ -14,26 +14,11 @@
 
 }
 
-/* .container:hover{
-    background-color: white;
-    color: black;
-    transition: 0.5s all ease;
-}
-
-.container:hover .link {
-    color: black;
-    transition: 0.3s all ease;
-}
-
-.container:hover .image {
-    filter: none;
-    transition: 0.3s all ease;
-} */
 
 .cartContainer{
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .menu{
@@ -41,9 +26,16 @@
     height: 25px;
 }
 
-.bag{
+.cart{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.cart svg{
     width: 25px;
     height: 25px;
+
 }
 
 .image{

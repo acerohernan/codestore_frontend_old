@@ -1,11 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 import Details from "./components/Details";
-/* import ExtraInfo from "./components/ExtraInfo"; */
 import Reviews from "./components/Reviews";
 import LatestProducst from "../Home/components/LatestProducts";
-import Cart from "../../components/Cart";
 
 import product from "./product.module.css";
 

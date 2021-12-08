@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 
 import cart from "./cart.module.css";
 
-function Cart({ handleOpenCart }) {
+function Cart({ closeCart }) {
   return (
     <>
       <section className={cart.container}>
@@ -13,7 +13,7 @@ function Cart({ handleOpenCart }) {
             <BagIcon />
             YOUR CART
           </h4>
-          <button className={cart.close} onClick={handleOpenCart}>
+          <button className={cart.close} onClick={closeCart}>
             X
           </button>
         </div>
@@ -38,7 +38,7 @@ function Cart({ handleOpenCart }) {
             </div>
           </div>
           <span className={cart.green}>Includes shipping costs</span>
-          <button className={cart.checkout}>
+          <button className={cart.checkout} onClick={closeCart}>
             <CartIcon />
             CHECK OUT
           </button>

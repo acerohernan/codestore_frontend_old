@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { connect } from "react-redux";
 
 import Header from "../Header";
 import Explore from "../../views/Home/components/Explore";
@@ -8,13 +9,7 @@ import Footer from "../Footer";
 import Copyright from "../Copyright";
 import Cart from "../Cart";
 
-function CardLayout({ children }) {
-  const [openCart, setOpenCart] = useState(true);
-
-  const handleOpenCart = () => {
-    setOpenCart(!openCart);
-  };
-
+function CardLayout({ children, cartIsOpen, closeCart }) {
   return (
     <>
       <Header />
@@ -23,13 +18,25 @@ function CardLayout({ children }) {
       <Follow />
       <Footer />
       <Copyright />
-      {openCart &&
+      {cartIsOpen &&
         ReactDOM.createPortal(
-          <Cart handleOpenCart={handleOpenCart} />,
+          <Cart closeCart={closeCart} />,
           document.getElementById("modal")
         )}
     </>
   );
 }
 
-export default CardLayout;
+function mapStateToProps(state) {
+  return {
+    cartIsOpen: state.cart.isOpen,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    closeCart: () => dispatch({ type: "HANDLE_CART", payload: false }),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardLayout);

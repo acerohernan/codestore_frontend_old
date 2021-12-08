@@ -1,5 +1,6 @@
 import React from "react";
 import header from "./header.module.css";
+import { connect } from "react-redux";
 
 import { Link } from "react-router-dom";
 
@@ -8,7 +9,10 @@ import { HiOutlineShoppingBag as BagIcon } from "react-icons/hi";
 
 import logo from "../../assets/logo.png";
 
-function Header() {
+function Header({ handleCart, cartIsOpen }) {
+  const handleOpenCart = () => {
+    handleCart(!cartIsOpen);
+  };
   return (
     <>
       <div className={header.container}>
@@ -29,7 +33,9 @@ function Header() {
         </div>
         <div className={header.cartContainer}>
           <span className={header.currency}>USD</span>
-          <BagIcon className={header.bag} />
+          <button className={header.cart} onClick={handleOpenCart}>
+            <BagIcon />
+          </button>
         </div>
       </div>
       <div className={header.shadow}></div>
@@ -37,4 +43,16 @@ function Header() {
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    cartIsOpen: state.cart.isOpen,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleCart: (bool) => dispatch({ type: "HANDLE_CART", payload: bool }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

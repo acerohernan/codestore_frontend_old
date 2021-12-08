@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "../../../../components/LinkStyled";
 
+import { BiRightArrowAlt as Arrow } from "react-icons/bi";
 import image from "../../../../assets/follow.jpg";
 import image2 from "../../../../assets/follow2.jpg";
 import follow from "./follow.module.css";
@@ -9,7 +9,15 @@ function Follow() {
   return (
     <div className={follow.container}>
       <h4 className={follow.title}>Follow us on Instagram for more updates</h4>
-      <Link text="Follow us" to="/" />
+      <a
+        href="https://github.com/acerohernan"
+        target="_blank"
+        rel="noreferrer"
+        className={follow.link}
+      >
+        Follow us
+        <Arrow />
+      </a>
       <div className={follow.imageContainer}>
         <img src={image} alt="beauty" className={follow.image} />
         <img src={image2} alt="beauty" className={follow.image} />

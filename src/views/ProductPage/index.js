@@ -1,9 +1,11 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 import Details from "./components/Details";
-import ExtraInfo from "./components/ExtraInfo";
+/* import ExtraInfo from "./components/ExtraInfo"; */
 import Reviews from "./components/Reviews";
 import LatestProducst from "../Home/components/LatestProducts";
+import Cart from "../../components/Cart";
 
 import product from "./product.module.css";
 
@@ -23,15 +25,6 @@ function ProductPage() {
         </div>
         <div className={product.sideBar}>
           <Details />
-          {/* <ExtraInfo
-            title="Shipping and returns"
-            text="Arrives in 5 to 7 days, retuns accepted within 30 days. For more
-        information, click here."
-          />
-          <ExtraInfo
-            title="Shipping"
-            text="Slightly textured fabric with tonal geometric design and a bit of shine"
-          /> */}
         </div>
       </div>
       <Reviews

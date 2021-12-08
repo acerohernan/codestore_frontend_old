@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import product from "./product.module.css";
 
@@ -8,7 +9,9 @@ const link =
 function ProductCard() {
   return (
     <div className={product.container}>
-      <img src={link} alt="product card" className={product.image} />
+      <Link to="/product/id">
+        <img src={link} alt="product card" className={product.image} />
+      </Link>
       <span className={product.title}>Complexion Cream</span>
       <p className={product.text}>
         Anti-aging complexion cream for medium to dry skin. Nourish your face

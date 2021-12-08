@@ -10,7 +10,7 @@ function Banner() {
         MOISTURE IS THE ESSENCE OF WETNESS, AND WETNESS IS THE ESSENCE OF
         BEAUTY.
       </p>
-      <Link to="/" className={banner.link}>
+      <Link to="/collections" className={banner.link}>
         Find out more
         <Arrow />
       </Link>

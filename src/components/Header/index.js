@@ -13,15 +13,17 @@ function Header() {
     <>
       <div className={header.container}>
         <MenuIcon className={header.menu} />
-        <img src={logo} alt="logo" className={header.image} />
+        <Link to="/">
+          <img src={logo} alt="logo" className={header.image} />
+        </Link>
         <div className={header.linksContainer}>
           <Link to="/" className={header.link}>
-            SHOP
-          </Link>
-          <Link to="/about" className={header.link}>
-            ABOUT
+            HOME
           </Link>
           <Link to="/collections" className={header.link}>
+            SHOP
+          </Link>
+          <Link to="/contact" className={header.link}>
             CONTACT
           </Link>
         </div>

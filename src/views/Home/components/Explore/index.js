@@ -11,7 +11,7 @@ function Explore() {
         <img src={image} alt="main" className={explore.image} />
         <div className={explore.textContainer}>
           <h4 className={explore.title}>A new shopping experience</h4>
-          <Link to="/" text="Explore products" />
+          <Link to="/collections" text="Explore products" />
         </div>
       </div>
     </div>

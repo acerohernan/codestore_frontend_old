@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "../../../../components/LinkStyled";
 
-import image from "../../../../assets/categories.jpeg";
+import image from "../../../../assets/follow.jpg";
+import image2 from "../../../../assets/follow2.jpg";
 import follow from "./follow.module.css";
 
 function Follow() {
@@ -11,7 +12,7 @@ function Follow() {
       <Link text="Follow us" to="/" />
       <div className={follow.imageContainer}>
         <img src={image} alt="beauty" className={follow.image} />
-        <img src={image} alt="beauty" className={follow.image} />
+        <img src={image2} alt="beauty" className={follow.image} />
       </div>
     </div>
   );

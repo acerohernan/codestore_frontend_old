@@ -6,7 +6,9 @@ import Reviews from "./components/Reviews";
 import LatestProducst from "../Home/components/LatestProducts";
 
 import product from "./product.module.css";
-import image from "../../assets/latest.jpg";
+
+const image =
+  "https://i.etsystatic.com/23646511/r/il/3be078/2560236514/il_794xN.2560236514_pix9.jpg";
 
 function ProductPage() {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "../../../../components/LinkStyled";
 
 import explore from "./explore.module.css";
-import image from "../../../../assets/explore.jpeg";
+import image from "../../../../assets/explore.jpg";
 
 function Explore() {
   return (

@@ -14,42 +14,15 @@ function Categories() {
       <h2 className={categories.title}>Categories</h2>
       <div className={categories.itemContainer}>
         <div className={categories.item}>
-          <img
-            alt="categories"
-            className={categories.imageSmall}
-            src={imageBig}
-          />
-          <img
-            alt="categories"
-            className={categories.imageBig}
-            src={imageBig}
-          />
+          <img alt="categories" className={categories.image} src={imageBig} />
           <h4 className={categories.itemTitle}>Hoddies</h4>
         </div>
         <div className={categories.item}>
-          <img
-            alt="categories"
-            className={categories.imageSmall}
-            src={imageBig2}
-          />
-          <img
-            alt="categories"
-            className={categories.imageBig}
-            src={imageBig2}
-          />
+          <img alt="categories" className={categories.image} src={imageBig2} />
           <h4 className={categories.itemTitle}>T shirts</h4>
         </div>
         <div className={categories.item}>
-          <img
-            alt="categories"
-            className={categories.imageSmall}
-            src={imageBig3}
-          />
-          <img
-            alt="categories"
-            className={categories.imageBig}
-            src={imageBig3}
-          />
+          <img alt="categories" className={categories.image} src={imageBig3} />
           <h4 className={categories.itemTitle}>Mugs</h4>
         </div>
       </div>

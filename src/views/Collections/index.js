@@ -3,33 +3,23 @@ import React from "react";
 import ProductCard from "../../components/ProductCard";
 import collections from "./collections.module.css";
 
+import products from "../../utils/products";
+
 function Collections() {
   return (
     <div className={collections.container}>
-      <div className={collections.section}>
-        <h4 className={collections.title}>Facial Products</h4>
-        <div className={collections.cards}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
-      </div>
-      <div className={collections.section}>
-        <h4 className={collections.title}>Hair Products</h4>
-        <div className={collections.cards}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
-      </div>
-      <div className={collections.section}>
-        <h4 className={collections.title}>Body Products</h4>
-        <div className={collections.cards}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
-      </div>
+      {products.map((el, index) => {
+        return (
+          <div className={collections.section} key={index}>
+            <h4 className={collections.title}>{el.category}</h4>
+            <div className={collections.cards}>
+              {el.products.map((product, index) => (
+                <ProductCard {...product} key={index} />
+              ))}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

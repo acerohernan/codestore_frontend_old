@@ -1,27 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import Details from "./components/Details";
 import Reviews from "./components/Reviews";
 import LatestProducst from "../Home/components/LatestProducts";
 
 import product from "./product.module.css";
+import { products } from "../../utils/products";
 
 const image =
   "https://i.etsystatic.com/23646511/r/il/3be078/2560236514/il_794xN.2560236514_pix9.jpg";
 
 function ProductPage() {
+  const [item, setItem] = useState({});
+
+  const { category, id } = useParams();
+  useEffect(() => {
+    const listOfProducts = products.find((el) => el.category === category);
+    const item = listOfProducts.products.find((product) => product.id === id);
+    setItem(item);
+  }, [id]);
+
   return (
     <div className={product.container}>
       <div className={product.main}>
         <div className={product.imageContainer}>
-          <img src={image} alt="product-img" className={product.image} />
+          <img src={item.image} alt="product-img" className={product.image} />
           <div className={product.secondaryImgs}>
-            <img src={image} alt="secondary" />
-            <img src={image} alt="secondary" />
+            <img src={item.image} alt="secondary" />
+            <img src={item.image} alt="secondary" />
           </div>
         </div>
         <div className={product.sideBar}>
-          <Details />
+          <Details {...item} />
         </div>
       </div>
       <Reviews

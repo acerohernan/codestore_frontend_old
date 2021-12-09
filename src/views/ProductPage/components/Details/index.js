@@ -3,15 +3,13 @@ import React from "react";
 import details from "./details.module.css";
 import { FiTruck as TruckIcon } from "react-icons/fi";
 
-function Details() {
+function Details({ name, price, description, stars }) {
   return (
     <div className={details.container}>
-      <h4 className={details.name}>React Hoddie</h4>
-      <span className={details.stars}>4.5/5✰</span>
-      <p className={details.caracteristics}>
-        A hoddie made of wool with the logo of React.
-      </p>
-      <span className={details.price}>$32.99</span>
+      <h4 className={details.name}>{name}</h4>
+      <span className={details.stars}>{`${stars}/5✰`}</span>
+      <p className={details.caracteristics}>{description}</p>
+      <span className={details.price}>{`$${price}.99`}</span>
       <span className={details.shipping}>Plus Shipping</span>
       <span className={details.color}>Color</span>
       <div className={details.size}>
@@ -24,7 +22,7 @@ function Details() {
           <span>2XL</span>
         </div>
       </div>
-      <button className={details.button}>Add to cart | $32</button>
+      <button className={details.button}>{`Add to cart | $${price}.99`}</button>
       <span className={details.time}>
         Shipping time: 3 days <TruckIcon />
       </span>

@@ -20,7 +20,7 @@ function App() {
             <Route element={<Home />} exact path="/" />
             <Route element={<About />} exact path="/about" />
             <Route element={<Collections />} exact path="/collections" />
-            <Route element={<ProductPage />} path="/product/:id" />
+            <Route element={<ProductPage />} path="/product/:category/:id" />
           </Routes>
         </CardLayout>
       </Router>

@@ -1,10 +1,10 @@
 import React from "react";
 
+import ProductCard from "../../../../components/ProductCard";
 import LinkStyled from "../../../../components/LinkStyled";
 
 import latest from "./latest.module.css";
-
-import ProductCard from "../../../../components/ProductCard";
+import { latestProducts } from "../../../../utils/products";
 
 function LatestProducts() {
   return (
@@ -15,9 +15,9 @@ function LatestProducts() {
       </h3>
       <LinkStyled to="/collections" text="See more products" />
       <div className={latest.cards}>
-        {[1, 2, 3, 4].map((el, index) => (
-          <ProductCard key={index} />
-        ))}
+        {latestProducts.map((product, index) => {
+          return <ProductCard {...product} key={index} />;
+        })}
       </div>
     </div>
   );

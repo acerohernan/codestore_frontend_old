@@ -1,6 +1,6 @@
-const products = [
+export const products = [
   {
-    category: "Hoddies",
+    category: "hoddies",
     products: [
       {
         id: "h-1",
@@ -32,7 +32,7 @@ const products = [
     ],
   },
   {
-    category: "T Shirts",
+    category: "t-shirts",
     products: [
       {
         id: "t-1",
@@ -64,7 +64,7 @@ const products = [
     ],
   },
   {
-    category: "Mugs",
+    category: "mugs",
     products: [
       {
         id: "m-1",
@@ -97,4 +97,45 @@ const products = [
   },
 ];
 
-export default products;
+export const latestProducts = [
+  {
+    id: "m-1",
+    name: "Angular Mug",
+    price: 32,
+    stars: 4.5,
+    category: "mugs",
+    description: "A mug made of wool with the logo of react",
+    image:
+      "https://res.cloudinary.com/teepublic/image/private/s--LlfLyPda--/c_scale,h_704/c_lpad,g_north_west,h_801,w_1802,x_123,y_48/c_crop,h_801,w_691,x_125/c_mfit,g_north_west,u_misc:Mug%20Effect%20Coffee3%20Left/e_displace,fl_layer_apply,x_14,y_-2/c_mfit,g_north_east,u_misc:Mug%20Effect%20Coffee3%20Right/e_displace,fl_layer_apply,x_-14,y_-2/c_crop,h_801,w_656/g_north_west,l_upload:v1466696262:production:blanks:w00xdkhjelyrnp8i8wxr,x_-410,y_-235/b_rgb:000000/c_limit,f_auto,h_630,q_90,w_630/v1542412282/production/designs/3517928_0.jpg",
+  },
+  {
+    id: "h-2",
+    name: "React Hoddie",
+    price: 32,
+    stars: 4.5,
+    category: "hoddies",
+    description: "A hoddie made of wool with the logo of react",
+    image:
+      "https://ih1.redbubble.net/image.32576156.9850/ssrco,mhoodie,mens,charcoal_heather,front,square_product,x600-bg,f8f8f8.1u4.jpg",
+  },
+  {
+    id: "t-1",
+    name: "VueJS T-shirt",
+    price: 32,
+    stars: 4.5,
+    category: "t-shirts",
+    description: "A t-shirt made of wool with the logo of react",
+    image:
+      "https://ih1.redbubble.net/image.502076318.4199/ssrco,classic_tee,mens,fafafa:ca443f4786,front_alt,square_product,600x600.u3.jpg",
+  },
+  {
+    id: "m-2",
+    name: "Java Mug",
+    price: 32,
+    stars: 4.5,
+    category: "mugs",
+    description: "A mug made of wool with the logo of react",
+    image:
+      "https://cdn.shopify.com/s/files/1/1668/0637/products/3fukc8ydbr49oy4wkvvk1fhs_grande.png?v=1571439593",
+  },
+];

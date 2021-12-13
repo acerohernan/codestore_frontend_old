@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { HiOutlineShoppingBag as BagIcon } from "react-icons/hi";
 import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 
-import cart from "./cart.module.css";
+import Card from "./components/Card";
 
-function Cart({ closeCart }) {
+import cart from "./cart.module.css";
+import {
+  removeProductAction,
+  reduceQuantityAction,
+  addProductAction,
+} from "../../store/actions";
+
+function Cart({
+  closeCart,
+  removeItem,
+  reduceQuantity,
+  increaseQuantity,
+  products,
+}) {
+  const [subtotal, setSubtotal] = useState(0);
+
+  useEffect(() => {
+    let sumOfPrices = 0;
+    products.map((product) => {
+      sumOfPrices = product.quantity * product.price + sumOfPrices;
+      return true;
+    });
+    setSubtotal(sumOfPrices);
+  }, [products]);
+
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    closeCart();
+    navigate("/checkout");
+  };
+
   return (
     <>
       <section className={cart.container}>
@@ -17,28 +50,40 @@ function Cart({ closeCart }) {
             X
           </button>
         </div>
-        <div className={cart.body}></div>
+        <div className={cart.body}>
+          {products.length === 0 ? (
+            <span className={cart.noProducts}>No products to see!</span>
+          ) : (
+            products.map((product) => (
+              <Card
+                {...product}
+                key={product.id}
+                removeItem={removeItem}
+                reduceQuantity={reduceQuantity}
+                increaseQuantity={increaseQuantity}
+              />
+            ))
+          )}
+        </div>
         <div className={cart.footer}>
           <div className={cart.subtotal}>
             <ul className={cart.subtotalLeft}>
               <li>Subtotal</li>
-              <li>Volume disocunt</li>
               <li>Shipping costs</li>
             </ul>
             <ul className={cart.subtotalRight}>
-              <li>$563.34</li>
-              <li>$563.34</li>
+              <li>${subtotal}.00</li>
               <li>$11.34</li>
             </ul>
           </div>
           <div className={cart.total}>
             <span>Total</span>
             <div>
-              <span>$575.33</span>
+              <span>${subtotal + 11.34}</span>
             </div>
           </div>
           <span className={cart.green}>Includes shipping costs</span>
-          <button className={cart.checkout} onClick={closeCart}>
+          <button className={cart.checkout} onClick={handleCheckout}>
             <CartIcon />
             CHECK OUT
           </button>
@@ -49,4 +94,14 @@ function Cart({ closeCart }) {
   );
 }
 
-export default Cart;
+const mapStateToProps = (state) => ({
+  products: state.cart.products,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  removeItem: (item) => dispatch(removeProductAction(item)),
+  reduceQuantity: (item) => dispatch(reduceQuantityAction(item)),
+  increaseQuantity: (item) => dispatch(addProductAction(item)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

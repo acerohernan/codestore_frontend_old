@@ -8,8 +8,9 @@ import { GiHamburgerMenu as MenuIcon } from "react-icons/gi";
 import { HiOutlineShoppingBag as BagIcon } from "react-icons/hi";
 
 import logo from "../../assets/logo.png";
+import { handleCartAction } from "../../store/actions";
 
-function Header({ handleCart, cartIsOpen }) {
+function Header({ handleCart, cartIsOpen, productsInCart }) {
   const handleOpenCart = () => {
     handleCart(!cartIsOpen);
   };
@@ -35,6 +36,7 @@ function Header({ handleCart, cartIsOpen }) {
           <span className={header.currency}>USD</span>
           <button className={header.cart} onClick={handleOpenCart}>
             <BagIcon />
+            {productsInCart.length > 0 && <span>{productsInCart.length}</span>}
           </button>
         </div>
       </div>
@@ -46,12 +48,13 @@ function Header({ handleCart, cartIsOpen }) {
 const mapStateToProps = (state) => {
   return {
     cartIsOpen: state.cart.isOpen,
+    productsInCart: state.cart.products,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleCart: (bool) => dispatch({ type: "HANDLE_CART", payload: bool }),
+    handleCart: (bool) => dispatch(handleCartAction(bool)),
   };
 };
 

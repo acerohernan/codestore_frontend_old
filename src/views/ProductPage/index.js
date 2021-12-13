@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Details from "./components/Details";
 import Reviews from "./components/Reviews";
@@ -7,19 +8,41 @@ import LatestProducst from "../Home/components/LatestProducts";
 
 import product from "./product.module.css";
 import { products } from "../../utils/products";
+import { reviews } from "../../utils/reviews";
+import { addProductAction, handleCartAction } from "../../store/actions";
 
-const image =
-  "https://i.etsystatic.com/23646511/r/il/3be078/2560236514/il_794xN.2560236514_pix9.jpg";
-
-function ProductPage() {
+function ProductPage({ addToCart, openCart }) {
   const [item, setItem] = useState({});
+  const [modalSizeAppear, setModalSizeAppear] = useState(false);
 
   const { category, id } = useParams();
+
   useEffect(() => {
     const listOfProducts = products.find((el) => el.category === category);
     const item = listOfProducts.products.find((product) => product.id === id);
     setItem(item);
-  }, [id]);
+    window.scroll(0, 0);
+  }, [id, category]);
+
+  const handleAddToCart = () => {
+    if (!item.size) {
+      setModalSizeAppear(true);
+      return false;
+    }
+    setModalSizeAppear(false);
+    addToCart({
+      ...item,
+      quantity: 1,
+    });
+    openCart();
+  };
+
+  const handleAddSize = (size) => {
+    setItem({
+      ...item,
+      size,
+    });
+  };
 
   return (
     <div className={product.container}>
@@ -32,40 +55,23 @@ function ProductPage() {
           </div>
         </div>
         <div className={product.sideBar}>
-          <Details {...item} />
+          <Details
+            {...item}
+            handleAddToCart={handleAddToCart}
+            addSize={handleAddSize}
+            modalSize={modalSizeAppear}
+          />
         </div>
       </div>
-      <Reviews
-        reviews={[
-          {
-            stars: "5/5",
-            title: "Perfect",
-            text: "Great fit and feel. They elevate lounging to the next level!",
-            name: "Heidi C. | December, 2019",
-          },
-          {
-            stars: "3.5/5",
-            title: "So comfortable!",
-            text: "I sized up just in case and kind of wished I hadn’t. Very comfortable and I live in them exclusively during the weekend.",
-            name: "Heidi C. | December, 2019",
-          },
-          {
-            stars: "4/5",
-            title: "Comfy but thin",
-            text: "Comfortable but kinda thin for a pant. I typically wear a 32/33 pant and had to size up to XL for these to not fit like a legging. Have been wearing pretty solid for a month of so and there's some pilling, but not a lot. Good price for OK product.",
-            name: "Heidi C. | December, 2019",
-          },
-          {
-            stars: "3.5/5",
-            title: "So comfortable!",
-            text: "I sized up just in case and kind of wished I hadn’t. Very comfortable and I live in them exclusively during the weekend.",
-            name: "Heidi C. | December, 2019",
-          },
-        ]}
-      />
+      <Reviews reviews={reviews} />
       <LatestProducst />
     </div>
   );
 }
 
-export default ProductPage;
+const mapDispatchToProps = (dispatch) => ({
+  openCart: () => dispatch(handleCartAction(true)),
+  addToCart: (item) => dispatch(addProductAction(item)),
+});
+
+export default connect(null, mapDispatchToProps)(ProductPage);

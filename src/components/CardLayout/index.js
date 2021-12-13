@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { connect } from "react-redux";
 
@@ -8,6 +8,8 @@ import Follow from "../../views/Home/components/Follow";
 import Footer from "../Footer";
 import Copyright from "../Copyright";
 import Cart from "../Cart";
+
+import { handleCartAction } from "../../store/actions";
 
 function CardLayout({ children, cartIsOpen, closeCart }) {
   return (
@@ -35,7 +37,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    closeCart: () => dispatch({ type: "HANDLE_CART", payload: false }),
+    closeCart: () => dispatch(handleCartAction(false)),
   };
 }
 

@@ -59,14 +59,28 @@
     margin-top: 20px;
 }
 
-.size span{
+.size form{
+    margin-bottom: 40px;
+}
+
+.size label{
     display: inline-block;
     padding: 10px 10px;
     font-weight: 300;
     border: 1px solid black;
-    margin: 10px 0 40px;
-    margin-right: 10px;
+    margin-right: 5px;
     font-size: 1rem;
+    margin-top: 10px;
+}
+
+.size input{
+    margin-right: 15px;
+}
+
+.sizeModal{
+    color: red;
+    display: block;
+    font-weight: 600;
 }
 
 .time{

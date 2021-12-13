@@ -5,7 +5,7 @@ import categories from "./categories.module.css";
 import image from "../../../../assets/categories1.png";
 
 import image2 from "../../../../assets/categories2.png";
-import image3 from "../../../../assets/categories3.jpg";
+import image3 from "../../../../assets/categories3.png";
 
 function Categories() {
   return (
@@ -29,7 +29,7 @@ function Categories() {
           <Link to="/collections" className={categories.linkImage}>
             <img alt="categories" className={categories.image} src={image3} />
           </Link>
-          <h4 className={categories.itemTitle}>Mugs</h4>
+          <h4 className={categories.itemTitle}>Tank Tops</h4>
         </div>
       </div>
     </div>

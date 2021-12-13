@@ -1,7 +1,6 @@
 .container{
     width: 100%;
     box-sizing: border-box;
-    padding: 0 5vw;
     max-width: 600px;
 }
 
@@ -40,7 +39,10 @@
 
 
 .check{
-    display: flex;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 10px;
+    justify-content: flex-start;
     margin: 10px;
 }
 

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu as MenuIcon } from "react-icons/gi";
 import { HiOutlineShoppingBag as BagIcon } from "react-icons/hi";
 
-import logo from "../../assets/logo1.png";
+import logo from "../../assets/logo.png";
 import { handleCartAction } from "../../store/actions";
 
 function Header({ handleCart, cartIsOpen, productsInCart }) {

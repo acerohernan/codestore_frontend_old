@@ -37,6 +37,8 @@
 .buttons button{
     padding: 10px 20px;
     outline: none;
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
 }
 
 .buttonHome{

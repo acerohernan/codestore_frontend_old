@@ -2,9 +2,11 @@ import React from "react";
 
 import OrderCard from "../OrderCard";
 
+import useSubtotal from "../../../../hooks/useSubtotal";
 import order from "./order.module.css";
 
 function Order({ orders }) {
+  const subtotal = useSubtotal(orders);
   return (
     <div className={order.container}>
       <h3 className={order.title}>You order</h3>
@@ -21,21 +23,21 @@ function Order({ orders }) {
         <tbody>
           <tr>
             <td>Subtotal</td>
-            <td>$62.00</td>
+            <td>${subtotal}.00</td>
           </tr>
           <tr>
-            <td>Tax</td>
-            <td>$0.00</td>
+            <td>Shipping</td>
+            <td>$11.34</td>
           </tr>
           <tr>
             <td>Discount</td>
-            <td>Saved $31.00</td>
+            <td>$00.00</td>
           </tr>
         </tbody>
       </table>
       <div className={order.total}>
         <span>Total amount</span>
-        <span>$310.00 USD</span>
+        <span>${subtotal + 11.34} USD</span>
       </div>
     </div>
   );

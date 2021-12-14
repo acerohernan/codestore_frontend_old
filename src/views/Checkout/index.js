@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Form from "./components/Form";
 import Payment from "./components/Payment";
 import Order from "./components/Order";
+import NoProducts from "./components/NoProducts";
 
 import checkout from "./checkout.module.css";
 
@@ -30,6 +31,7 @@ function Checkout({ orders }) {
           Make payment
         </button>
       </div>
+      {orders.length < 1 && <NoProducts />}
     </form>
   );
 }

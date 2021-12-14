@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import details from "./details.module.css";
+import useSubtotal from "../../../../hooks/useSubtotal";
 
 function Details({ products }) {
-  const [subtotal, setSubtotal] = useState(0);
-
-  useEffect(() => {
-    let sumOfProducts = 0;
-    products.map((product) => {
-      sumOfProducts = product.quantity * product.price + sumOfProducts;
-      return true;
-    });
-    setSubtotal(sumOfProducts);
-  }, [products]);
+  const subtotal = useSubtotal(products);
 
   return (
     <div className={details.container}>

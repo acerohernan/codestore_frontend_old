@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import NoProducts from "./components/NoProducts";
 import Card from "./components/Card";
 
+import useSubtotal from "../../hooks/useSubtotal";
 import cart from "./cart.module.css";
 import {
   removeProductAction,
@@ -21,17 +22,7 @@ function Cart({
   increaseQuantity,
   products,
 }) {
-  const [subtotal, setSubtotal] = useState(0);
-
-  useEffect(() => {
-    let sumOfPrices = 0;
-    products.map((product) => {
-      sumOfPrices = product.quantity * product.price + sumOfPrices;
-      return true;
-    });
-    setSubtotal(sumOfPrices);
-  }, [products]);
-
+  const subtotal = useSubtotal(products);
   const navigate = useNavigate();
 
   const handleCheckout = () => {

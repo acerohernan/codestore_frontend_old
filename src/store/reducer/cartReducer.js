@@ -60,7 +60,13 @@ const cartReducer = (state = initialState, { type, payload }) => {
           },
         ],
       };
-
+      break;
+    case "REMOVE_ALL_PRODUCTS":
+      return {
+        ...state,
+        products: [],
+      };
+      break;
     default:
       return state;
   }

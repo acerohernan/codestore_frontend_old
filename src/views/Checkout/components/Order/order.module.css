@@ -4,8 +4,8 @@
     padding: 10px 20px;
     box-sizing: border-box;
     max-width: 600px;
+    margin: 40px auto;
     margin-top: 40px;
-    margin: 0 auto;
     max-height: 460px;
 }
 
@@ -17,22 +17,18 @@
     margin-bottom: 20px ; 
 }
 
-.products{
-
-}
-
 .cupon{
+    width: 100%;
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding: 15px 0;
-    gap: 10px;
     border-top: 1px solid #DEDEDE;
     border-bottom: 1px solid #DEDEDE;
     box-sizing: border-box;
 }
 
 .cupon input{
-    padding: 15px 20px;
+    padding: 15px 10px;
     text-transform: uppercase;
     border: 1px solid #DEDEDE;
     outline-width: 1px;
@@ -42,7 +38,7 @@
 .cupon button{
     background-color: black;
     color: white;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     outline: none;
 }
@@ -68,4 +64,5 @@
     border-top: 1px solid #DEDEDE;
     padding: 20px 0;
 }
+
 

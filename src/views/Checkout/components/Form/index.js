@@ -1,7 +1,5 @@
 import React from "react";
 
-import Payment from "../Payment";
-
 import form from "./form.module.css";
 
 function Form() {
@@ -69,7 +67,6 @@ function Form() {
         <label htmlFor="notes">Order notes (optional)</label>
         <textarea type="text" className={form.notes} name="notes" id="notes" />
       </div>
-      <Payment />
     </section>
   );
 }

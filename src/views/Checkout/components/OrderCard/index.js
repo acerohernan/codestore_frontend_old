@@ -1,20 +1,19 @@
 import React from "react";
 
-import src from "../../../../assets/categories1.png";
 import card from "./card.module.css";
 
-function OrderCard() {
+function OrderCard({ name, image, quantity, size, price }) {
   return (
     <div className={card.container}>
       <div className={card.main}>
-        <img src={src} alt="product" className={card.image} />
+        <img src={image} alt="product" className={card.image} />
         <div>
-          <h4>Lip Fantastic</h4>
-          <span>Quantity: 1</span>
-          <span>Size: 30ml</span>
+          <h4>{name}</h4>
+          <span>Quantity: {quantity}</span>
+          <span>Size: {size}</span>
         </div>
       </div>
-      <span>$24.00 USD</span>
+      <span>${price}.00 USD</span>
     </div>
   );
 }

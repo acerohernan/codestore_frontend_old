@@ -9,6 +9,7 @@ import About from "./views/About";
 import Collections from "./views/Collections";
 import ProductPage from "./views/ProductPage";
 import Checkout from "./views/Checkout";
+import Thanks from "./views/Thanks";
 
 import "./styles/globalStyles.css";
 
@@ -22,7 +23,8 @@ function App() {
             <Route element={<About />} exact path="/about" />
             <Route element={<Collections />} exact path="/collections" />
             <Route element={<ProductPage />} path="/product/:category/:id" />
-            <Route element={<Checkout />} path="/checkout" />
+            <Route element={<Checkout />} exact path="/checkout" />
+            <Route element={<Thanks />} exact path="/checkout/confirm" />
           </Routes>
         </CardLayout>
       </Router>

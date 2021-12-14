@@ -1,12 +1,17 @@
 import React from "react";
 
+import OrderCard from "../OrderCard";
+
 import order from "./order.module.css";
 
 function Order() {
   return (
     <div className={order.container}>
-      <h3>You order</h3>
-      <div className={order.products}></div>
+      <h3 className={order.title}>You order</h3>
+      <div className={order.products}>
+        <OrderCard />
+        <OrderCard />
+      </div>
       <div className={order.cupon}>
         <input type="text" placeholder="Gift card or discount code" />
         <button>Apply</button>

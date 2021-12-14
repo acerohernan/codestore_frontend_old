@@ -1,11 +1,11 @@
 import React from "react";
 
 import { BiRightArrowAlt as Arrow } from "react-icons/bi";
-import image from "../../../../assets/follow.jpg";
-import image2 from "../../../../assets/follow2.jpg";
+import image from "../../assets/follow.jpg";
+import image2 from "../../assets/follow2.jpg";
 import follow from "./follow.module.css";
 
-function Follow() {
+function FollowSection() {
   return (
     <div className={follow.container}>
       <h4 className={follow.title}>Follow us on Instagram for more updates</h4>
@@ -26,4 +26,4 @@ function Follow() {
   );
 }
 
-export default Follow;
+export default FollowSection;

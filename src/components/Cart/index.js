@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { HiOutlineShoppingBag as BagIcon } from "react-icons/hi";
-import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import NoProducts from "./components/NoProducts";
 import Card from "./components/Card";
 
 import cart from "./cart.module.css";
@@ -41,53 +42,24 @@ function Cart({
   return (
     <>
       <section className={cart.container}>
-        <div className={cart.header}>
-          <h4 className={cart.title}>
-            <BagIcon />
-            YOUR CART
-          </h4>
-          <button className={cart.close} onClick={closeCart}>
-            X
-          </button>
-        </div>
-        <div className={cart.body}>
-          {products.length === 0 ? (
-            <span className={cart.noProducts}>No products to see!</span>
-          ) : (
-            products.map((product) => (
-              <Card
-                {...product}
-                key={product.id}
-                removeItem={removeItem}
-                reduceQuantity={reduceQuantity}
-                increaseQuantity={increaseQuantity}
-              />
-            ))
-          )}
-        </div>
-        <div className={cart.footer}>
-          <div className={cart.subtotal}>
-            <ul className={cart.subtotalLeft}>
-              <li>Subtotal</li>
-              <li>Shipping costs</li>
-            </ul>
-            <ul className={cart.subtotalRight}>
-              <li>${subtotal}.00</li>
-              <li>$11.34</li>
-            </ul>
-          </div>
-          <div className={cart.total}>
-            <span>Total</span>
-            <div>
-              <span>${subtotal + 11.34}</span>
+        <Header closeCart={closeCart} />
+        {products.length > 0 && (
+          <>
+            <div className={cart.body}>
+              {products.map((product) => (
+                <Card
+                  {...product}
+                  key={product.id}
+                  removeItem={removeItem}
+                  reduceQuantity={reduceQuantity}
+                  increaseQuantity={increaseQuantity}
+                />
+              ))}
             </div>
-          </div>
-          <span className={cart.green}>Includes shipping costs</span>
-          <button className={cart.checkout} onClick={handleCheckout}>
-            <CartIcon />
-            CHECK OUT
-          </button>
-        </div>
+            <Footer handleCheckout={handleCheckout} subtotal={subtotal} />
+          </>
+        )}
+        {products.length === 0 && <NoProducts closeCart={closeCart} />}
       </section>
       <div className={cart.shadow}></div>
     </>

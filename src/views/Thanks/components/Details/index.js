@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import details from "./details.module.css";
 
-function Details() {
+function Details({ products }) {
+  const [subtotal, setSubtotal] = useState(0);
+
+  useEffect(() => {
+    let sumOfProducts = 0;
+    products.map((product) => {
+      sumOfProducts = product.quantity * product.price + sumOfProducts;
+      return true;
+    });
+    setSubtotal(sumOfProducts);
+  }, [products]);
+
   return (
     <div className={details.container}>
       <h3>Order details</h3>
@@ -19,21 +30,17 @@ function Details() {
           318 Homer Street <br /> Vancouver <br /> V6B22V2,CA
         </span>
       </div>
-      <div className={details.product}>
-        <span>1 x Lip Fantastic</span>
-        <span>$24.00</span>
-      </div>
-      <div className={details.product}>
-        <span>1 x Lip Fantastic</span>
-        <span>$24.00</span>
-      </div>
-      <div className={details.product}>
-        <span>1 x Lip Fantastic</span>
-        <span>$24.00</span>
-      </div>
+      {products.map(({ quantity, name, price, id }) => (
+        <div className={details.product} key={id}>
+          <span>
+            {quantity} x {name}
+          </span>
+          <span>${price * quantity}.00</span>
+        </div>
+      ))}
       <div className={details.subtotal}>
         <span>Subtotal</span>
-        <span>$24.00 USD</span>
+        <span>${subtotal}.00 USD</span>
       </div>
       <div className={details.shipping}>
         <span>Shipping </span>
@@ -41,7 +48,7 @@ function Details() {
       </div>
       <div className={details.total}>
         <span>Order total</span>
-        <span>$29.00</span>
+        <span>${subtotal + +11.34}</span>
       </div>
     </div>
   );

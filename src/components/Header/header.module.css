@@ -51,10 +51,15 @@
     font-weight: 600;
 }
 
-.image{
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
     width: 150px;
     margin: 0 auto;
-/*     filter:invert(100%); */
 }
 
 .container:hover ~ .image {

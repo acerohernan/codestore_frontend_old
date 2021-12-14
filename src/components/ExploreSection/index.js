@@ -1,10 +1,10 @@
 import React from "react";
-import Link from "../../../../components/LinkStyled";
+import Link from "../LinkStyled";
 
 import explore from "./explore.module.css";
-import image from "../../../../assets/explore.jpg";
+import image from "../../assets/explore.jpg";
 
-function Explore() {
+function ExploreSection() {
   return (
     <div className={explore.container}>
       <div className={explore.content}>
@@ -18,4 +18,4 @@ function Explore() {
   );
 }
 
-export default Explore;
+export default ExploreSection;

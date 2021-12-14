@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import { connect } from "react-redux";
 
 import Header from "../Header";
-import Explore from "../../views/Home/components/Explore";
-import Follow from "../../views/Home/components/Follow";
 import Footer from "../Footer";
 import Copyright from "../Copyright";
 import Cart from "../Cart";
@@ -16,8 +14,6 @@ function CardLayout({ children, cartIsOpen, closeCart }) {
     <>
       <Header />
       {children}
-      <Explore />
-      <Follow />
       <Footer />
       <Copyright />
       {cartIsOpen &&

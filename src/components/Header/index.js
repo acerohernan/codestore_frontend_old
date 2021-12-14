@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu as MenuIcon } from "react-icons/gi";
 import { HiOutlineShoppingBag as BagIcon } from "react-icons/hi";
 
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo1.png";
 import { handleCartAction } from "../../store/actions";
 
 function Header({ handleCart, cartIsOpen, productsInCart }) {
@@ -18,8 +18,8 @@ function Header({ handleCart, cartIsOpen, productsInCart }) {
     <>
       <div className={header.container}>
         <MenuIcon className={header.menu} />
-        <Link to="/">
-          <img src={logo} alt="logo" className={header.image} />
+        <Link to="/" className={header.logo}>
+          <img src={logo} alt="logo" />
         </Link>
         <div className={header.linksContainer}>
           <Link to="/" className={header.link}>

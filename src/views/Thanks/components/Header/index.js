@@ -9,7 +9,7 @@ function Header() {
     <div className={header.container}>
       <img src={check} alt="check" className={header.check} />
       <h3>Thank you for your purchase!</h3>
-      <span>Ypou order completed successfully</span>
+      <span className={header.message}>You order completed successfully</span>
       <span className={header.orderNumber}>
         Here is your order number for reference: CMMRC-197605
       </span>

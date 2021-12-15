@@ -16,7 +16,8 @@ import "./styles/globalStyles.css";
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      {//Github path}
+      <Router basename="/code-store/">
         <CardLayout>
           <Routes>
             <Route element={<Home />} exact path="/" />

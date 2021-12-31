@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import product from "./product.module.css";
+import product from "./product.module.scss";
 
 function ProductCard({ id, name, price, description, image, category }) {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import image from "../../../../assets/noproducts.jpg";
-import noproducts from "./noproducts.module.css";
+import noproducts from "./noproducts.module.scss";
 
 function NoProducts({ closeCart }) {
   const navigate = useNavigate();

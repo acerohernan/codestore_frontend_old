@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 
-import footer from "./footer.module.css";
+import footer from "./footer.module.scss";
 
 function Footer({ subtotal, handleCheckout }) {
   return (

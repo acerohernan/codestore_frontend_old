@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "../LinkStyled";
 
-import explore from "./explore.module.css";
+import explore from "./explore.module.scss";
 import image from "../../assets/explore.jpg";
 
 function ExploreSection() {

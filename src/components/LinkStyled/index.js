@@ -2,7 +2,7 @@ import React from "react";
 import { BiRightArrowAlt as Arrow } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-import link from "./link.module.css";
+import link from "./link.module.scss";
 
 function LinkStyled({ text, to }) {
   return (

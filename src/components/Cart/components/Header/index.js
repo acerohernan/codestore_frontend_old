@@ -1,7 +1,7 @@
 import React from "react";
 import { HiOutlineShoppingBag as BagIcon } from "react-icons/hi";
 
-import header from "./header.module.css";
+import header from "./header.module.scss";
 
 function Header({ closeCart }) {
   return (

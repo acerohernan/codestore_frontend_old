@@ -1,5 +1,5 @@
 import React from "react";
-import header from "./header.module.css";
+import header from "./header.module.scss";
 import { connect } from "react-redux";
 
 import { Link } from "react-router-dom";
@@ -28,9 +28,14 @@ function Header({ handleCart, cartIsOpen, productsInCart }) {
           <Link to="/collections" className={header.link}>
             SHOP
           </Link>
-          <Link to="/contact" className={header.link}>
+          <a
+            href="https://acerohernan.github.io/portfolio/"
+            target="_blank"
+            className={header.link}
+            rel="noreferrer"
+          >
             CONTACT
-          </Link>
+          </a>
         </div>
         <div className={header.cartContainer}>
           <span className={header.currency}>USD</span>

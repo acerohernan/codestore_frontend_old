@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from "./reviews.module.css";
+import style from "./reviews.module.scss";
 
 function Reviews({ reviews }) {
   return (

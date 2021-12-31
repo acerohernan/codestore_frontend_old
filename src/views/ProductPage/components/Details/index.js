@@ -1,6 +1,6 @@
 import React from "react";
 
-import details from "./details.module.css";
+import details from "./details.module.scss";
 import { FiTruck as TruckIcon } from "react-icons/fi";
 
 function Details({

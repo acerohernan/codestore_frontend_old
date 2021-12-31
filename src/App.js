@@ -11,7 +11,7 @@ import ProductPage from "./views/ProductPage";
 import Checkout from "./views/Checkout";
 import Thanks from "./views/Thanks";
 
-import "./styles/globalStyles.css";
+import "./styles/globalStyles.scss";
 
 function App() {
   return (

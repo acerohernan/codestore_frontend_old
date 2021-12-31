@@ -8,7 +8,7 @@ import Details from "./components/Details";
 import Reviews from "./components/Reviews";
 import LatestProducst from "../Home/components/LatestProducts";
 
-import product from "./product.module.css";
+import product from "./product.module.scss";
 import { products } from "../../utils/products";
 import { reviews } from "../../utils/reviews";
 import { addProductAction, handleCartAction } from "../../store/actions";

@@ -3,7 +3,7 @@ import React from "react";
 import OrderCard from "../OrderCard";
 
 import useSubtotal from "../../../../hooks/useSubtotal";
-import order from "./order.module.css";
+import order from "./order.module.scss";
 
 function Order({ orders }) {
   const subtotal = useSubtotal(orders);

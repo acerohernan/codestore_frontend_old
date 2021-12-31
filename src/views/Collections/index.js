@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import ExploreSection from "../../components/ExploreSection";
 import FollowSection from "../../components/FollowSection";
 import ProductCard from "../../components/ProductCard";
-import collections from "./collections.module.css";
+import collections from "./collections.module.scss";
 
 import { products } from "../../utils/products";
 import toUpperCase from "../../utils/toUpperCase";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import details from "./details.module.css";
+import details from "./details.module.scss";
 import useSubtotal from "../../../../hooks/useSubtotal";
 
 function Details({ products }) {

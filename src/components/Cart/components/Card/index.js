@@ -1,7 +1,7 @@
 import React from "react";
 import { BsTrash as TrashIcon } from "react-icons/bs";
 
-import card from "./card.module.css";
+import card from "./card.module.scss";
 
 function Card({
   id,

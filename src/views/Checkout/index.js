@@ -7,7 +7,7 @@ import Payment from "./components/Payment";
 import Order from "./components/Order";
 import NoProducts from "./components/NoProducts";
 
-import checkout from "./checkout.module.css";
+import checkout from "./checkout.module.scss";
 
 function Checkout({ orders }) {
   useEffect(() => {

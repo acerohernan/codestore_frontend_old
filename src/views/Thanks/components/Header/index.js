@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import check from "../../../../assets/check.png";
 
-import header from "./header.module.css";
+import header from "./header.module.scss";
 
 function Header({ removeAll }) {
   const navigate = useNavigate();

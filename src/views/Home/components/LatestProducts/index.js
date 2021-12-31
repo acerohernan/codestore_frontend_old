@@ -3,7 +3,7 @@ import React from "react";
 import ProductCard from "../../../../components/ProductCard";
 import LinkStyled from "../../../../components/LinkStyled";
 
-import latest from "./latest.module.css";
+import latest from "./latest.module.scss";
 import { latestProducts } from "../../../../utils/products";
 
 function LatestProducts() {

@@ -3,7 +3,7 @@ import React from "react";
 import { BiRightArrowAlt as Arrow } from "react-icons/bi";
 import image from "../../assets/follow.jpg";
 import image2 from "../../assets/follow2.jpg";
-import follow from "./follow.module.css";
+import follow from "./follow.module.scss";
 
 function FollowSection() {
   return (

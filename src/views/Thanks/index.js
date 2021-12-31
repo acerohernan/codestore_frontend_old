@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Details from "./components/Details";
 
 import { removeAllProductsAction } from "../../store/actions";
-import thanks from "./thanks.module.css";
+import thanks from "./thanks.module.scss";
 
 function Thanks({ products, removeAll }) {
   useEffect(() => {

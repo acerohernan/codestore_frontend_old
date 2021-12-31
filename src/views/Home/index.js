@@ -7,7 +7,7 @@ import LatestProducts from "./components/LatestProducts";
 import ExploreSection from "../../components/ExploreSection";
 import FollowSection from "../../components/FollowSection";
 
-import home from "./home.module.css";
+import home from "./home.module.scss";
 
 function Home() {
   useEffect(() => {

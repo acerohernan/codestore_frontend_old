@@ -8,7 +8,7 @@ import NoProducts from "./components/NoProducts";
 import Card from "./components/Card";
 
 import useSubtotal from "../../hooks/useSubtotal";
-import cart from "./cart.module.css";
+import cart from "./cart.module.scss";
 import {
   removeProductAction,
   reduceQuantityAction,

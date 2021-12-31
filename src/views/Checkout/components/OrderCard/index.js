@@ -1,6 +1,6 @@
 import React from "react";
 
-import card from "./card.module.css";
+import card from "./card.module.scss";
 
 function OrderCard({ name, image, quantity, size, price }) {
   return (

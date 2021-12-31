@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import copyright from "./copyright.module.css";
+import copyright from "./copyright.module.scss";
 
 function Copyright() {
   return (

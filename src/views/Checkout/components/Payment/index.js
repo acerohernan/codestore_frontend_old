@@ -1,6 +1,6 @@
 import React from "react";
 
-import payment from "./payment.module.css";
+import payment from "./payment.module.scss";
 
 function Payment() {
   return (

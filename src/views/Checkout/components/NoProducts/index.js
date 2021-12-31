@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import noproducts from "./noproducts.module.css";
+import noproducts from "./noproducts.module.scss";
 
 function NoProducts() {
   return (

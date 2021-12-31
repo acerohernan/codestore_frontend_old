@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import hero from "./hero.module.css";
+import hero from "./hero.module.scss";
 
 function Hero() {
   return (

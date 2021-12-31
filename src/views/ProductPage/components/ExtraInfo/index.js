@@ -1,7 +1,7 @@
 import React from "react";
 
 import { AiOutlinePlus as PlusIcon } from "react-icons/ai";
-import extra from "./extra.module.css";
+import extra from "./extra.module.scss";
 
 function ExtraInfo({ title, text }) {
   return (

@@ -1,12 +1,17 @@
 import React from "react";
+import Circle from "react-loader-spinner";
 
-import ProductCard from "../../../../components/ProductCard";
-import LinkStyled from "../../../../components/LinkStyled";
+import ProductCard from "../ProductCard";
+import LinkStyled from "../LinkStyled";
 
 import latest from "./latest.module.scss";
-import { latestProducts } from "../../../../utils/products";
+import useFetch from "../../hooks/useFetch";
 
 function LatestProducts() {
+  const [products, loading] = useFetch(
+    "https://code-store-backend.herokuapp.com/api/collections/hoddie/products"
+  );
+
   return (
     <div className={latest.container}>
       <span className={latest.intro}>Introducing Our Latest Products</span>
@@ -15,7 +20,8 @@ function LatestProducts() {
       </h3>
       <LinkStyled to="/collections" text="See more products" />
       <div className={latest.cards}>
-        {latestProducts.map((product, index) => {
+        {loading && <Circle type="ThreeDots" color="black" />}
+        {products?.map((product, index) => {
           return <ProductCard {...product} key={index} />;
         })}
       </div>

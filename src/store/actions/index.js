@@ -21,3 +21,8 @@ export const reduceQuantityAction = (payload) => ({
 export const removeAllProductsAction = () => ({
   type: "REMOVE_ALL_PRODUCTS",
 });
+
+export const setLoadingAction = (payload) => ({
+  type: "SET_LOADING",
+  payload,
+});

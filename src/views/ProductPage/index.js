@@ -6,25 +6,27 @@ import ExploreSection from "../../components/ExploreSection";
 import FollowSection from "../../components/FollowSection";
 import Details from "./components/Details";
 import Reviews from "./components/Reviews";
-import LatestProducst from "../Home/components/LatestProducts";
+import LatestProducst from "../../components/LatestProducts";
 
+import Loader from "../../components/Loader";
 import product from "./product.module.scss";
-import { products } from "../../utils/products";
 import { reviews } from "../../utils/reviews";
 import { addProductAction, handleCartAction } from "../../store/actions";
+import useFeth from "../../hooks/useFetch";
 
 function ProductPage({ addToCart, openCart }) {
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState();
   const [modalSizeAppear, setModalSizeAppear] = useState(false);
-
   const { category, id } = useParams();
 
+  const [data, loading] = useFeth(
+    `https://code-store-backend.herokuapp.com/api/collections/${category}/${id}`
+  );
+
   useEffect(() => {
-    const listOfProducts = products.find((el) => el.category === category);
-    const item = listOfProducts.products.find((product) => product.id === id);
-    setItem(item);
     window.scroll(0, 0);
-  }, [id, category]);
+    if (data) setItem(data);
+  }, [id, category, data]);
 
   const handleAddToCart = () => {
     if (!item.size) {
@@ -48,13 +50,18 @@ function ProductPage({ addToCart, openCart }) {
 
   return (
     <>
+      {loading && <Loader />}
       <div className={product.container}>
         <div className={product.main}>
           <div className={product.imageContainer}>
-            <img src={item.image} alt="product-img" className={product.image} />
+            <img
+              src={item?.image}
+              alt="product-img"
+              className={product.image}
+            />
             <div className={product.secondaryImgs}>
-              <img src={item.image} alt="secondary" />
-              <img src={item.image} alt="secondary" />
+              <img src={item?.image} alt="secondary" />
+              <img src={item?.image} alt="secondary" />
             </div>
           </div>
           <div className={product.sideBar}>

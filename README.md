@@ -1,2 +1,2 @@
 # crypto-store
-This is a store for fans of cryptocurrencyes.
+This is a store for coder lovers.

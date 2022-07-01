@@ -29,7 +29,7 @@ function Header({ handleCart, cartIsOpen, productsInCart }) {
             SHOP
           </Link>
           <a
-            href="https://acerohernan.github.io/portfolio/"
+            href="https://acerohernan.github.io/portfolio_react_ts/"
             target="_blank"
             className={header.link}
             rel="noreferrer"

@@ -16,7 +16,7 @@ import "./styles/globalStyles.scss";
 function App() {
   return (
     <Provider store={store}>
-      <Router basename="/code-store/">
+      <Router basename="/codestore_frontend/">
         <CardLayout>
           <Routes>
             <Route element={<Home />} exact path="/" />

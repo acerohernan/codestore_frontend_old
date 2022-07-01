@@ -6,7 +6,7 @@ function Copyright() {
     <div className={copyright.container}>
       <div className={copyright.linksContainer}>
         <a
-          href="https://github.com/acerohernan/code-store"
+          href="https://github.com/acerohernan/codestore_frontend/"
           target="_blank"
           rel="noreferrer"
           className={copyright.link}

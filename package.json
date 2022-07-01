@@ -2,7 +2,7 @@
   "name": "crypto-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://acerohernan.github.io/code-store/",
+  "homepage": "https://acerohernan.github.io/codestore_frontend/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
